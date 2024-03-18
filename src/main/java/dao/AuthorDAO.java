@@ -37,19 +37,21 @@ public class AuthorDAO {
              """;
 
     private static final String UPDATE = """
-            update ticket
-                        set passenger_no = ?,
-                            passenger_name = ?,
-                            flight_id = ?,
-                            seat_no = ?,
-                            cost = ?
-                        WHERE id = ?
+            UPDATE author
+            SET firstname = ?,
+                lastname = ?
+            WHERE id = ?                
              """;
 
     private static final String FIND_BY_NAME_SQL = """
             select *
             from author
             where firstname = ? or CONCAT(firstname, ' ', lastname) = ? or CONCAT(lastname, ' ', firstname) = ? or lastname = ?;
+            """;
+
+    private static final String DELETE_SQL = """
+            DELETE FROM author
+            WHERE id =?
             """;
 
     public Author findByName(String name) {
@@ -134,6 +136,29 @@ public class AuthorDAO {
 
         return add(author);
 
+    }
+
+    public void update(Author author){
+        try(Connection connection = ConnectionManager.open();
+        PreparedStatement preparedStatement = connection.prepareStatement(UPDATE)) {
+            preparedStatement.setString(1, author.getFirstname());
+            preparedStatement.setString(2, author.getLastname());
+            preparedStatement.setInt(3, author.getId());
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public boolean delete(Integer id){
+        try (Connection connection = ConnectionManager.open();
+             PreparedStatement preparedStatement = connection.prepareStatement(DELETE_SQL)) {
+            preparedStatement.setInt(1, id);
+
+            return preparedStatement.executeUpdate()>0;
+        }catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
 }

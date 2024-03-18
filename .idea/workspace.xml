@@ -9,46 +9,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="93e52c57-f02c-4ead-9cf4-c78014e013c2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/unnamed.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/bookController/AddBook.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/bookController/DeleteBook.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/bookController/GetAllBooks.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/bookController/GetBook.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/bookController/UpdateBook.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/publisherController/AddPublisher.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/publisherController/DeletePublisher.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/publisherController/GetPublisher.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/publisherController/UpdatePublisher.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/AuthorDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/BookDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/PublisherDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dto/AuthorDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dto/BookDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dto/PublisherDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/entity/Author.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/entity/Book.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/entity/Publisher.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/mappers/AuthorReadMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/mappers/AuthorWriteUpdateMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/mappers/BookReadMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/mappers/BookWriteUpdateMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/mappers/Mapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/mappers/PublisherReadMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/mappers/PublisherWriteUpdateMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/service/AuthorService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/service/BookService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/service/PublisherService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/util/ConnectionManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/util/PropertiesUtil.java" afterDir="false" />
+    <list default="true" id="93e52c57-f02c-4ead-9cf4-c78014e013c2" name="Changes" comment="before refactor">
+      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/AuthorController/AuthorCRUD.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/bookController/BookCRUD.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/publisherController/PublisherCRUD.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/util/ServletUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/service/AuthorServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/mockito-extensions/org.mockito.plugins.MockMaker" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/bookController/AddBook.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/bookController/DeleteBook.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/bookController/GetBook.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/bookController/UpdateBook.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/publisherController/AddPublisher.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/publisherController/DeletePublisher.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/publisherController/GetPublisher.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/publisherController/UpdatePublisher.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/AuthorDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/AuthorDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dto/AuthorDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dto/AuthorDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mappers/AuthorReadMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mappers/AuthorReadMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/service/AuthorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/AuthorService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,6 +40,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -83,38 +65,113 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/postgresql-42.7.2.jar&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.3091954&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;Console&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "last_opened_file_path": "C:/postgresql-42.7.2.jar",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.3091954",
+    "settings.editor.selected.configurable": "preferences.editor"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
     ],
-    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
-      &quot;PLAIN_TEXT&quot;
+    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
+      "PLAIN_TEXT"
     ]
   }
-}</component>
-  <component name="RunManager" selected="Tomcat Server.Tomcat 10.1.13">
-    <configuration name="ьн" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ьн" />
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="service" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.AuthorServiceTest.findByIdTest">
+    <configuration name="AuthorServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="REST_CRUD_JDBC_Tomcat" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="service" />
+      <option name="MAIN_CLASS_NAME" value="service.AuthorServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MyMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="MyMain" />
+    <configuration name="AuthorServiceTest.deleteTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="REST_CRUD_JDBC_Tomcat" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="service" />
+      <option name="MAIN_CLASS_NAME" value="service.AuthorServiceTest" />
+      <option name="METHOD_NAME" value="deleteTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AuthorServiceTest.findByIdTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="REST_CRUD_JDBC_Tomcat" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="service" />
+      <option name="MAIN_CLASS_NAME" value="service.AuthorServiceTest" />
+      <option name="METHOD_NAME" value="findByIdTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AuthorServiceTest.findByNameOrElseAdd_withExistName" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="REST_CRUD_JDBC_Tomcat" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="service" />
+      <option name="MAIN_CLASS_NAME" value="service.AuthorServiceTest" />
+      <option name="METHOD_NAME" value="findByNameOrElseAdd_withExistName" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AuthorServiceTest.getAuthorDTO" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="REST_CRUD_JDBC_Tomcat" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="service" />
+      <option name="MAIN_CLASS_NAME" value="service.AuthorServiceTest" />
+      <option name="METHOD_NAME" value="getAuthorDTO" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -209,8 +266,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ьн" />
-        <item itemvalue="Application.MyMain" />
+        <item itemvalue="JUnit.AuthorServiceTest.findByIdTest" />
+        <item itemvalue="JUnit.AuthorServiceTest.findByNameOrElseAdd_withExistName" />
+        <item itemvalue="JUnit.AuthorServiceTest" />
+        <item itemvalue="JUnit.AuthorServiceTest.deleteTest" />
+        <item itemvalue="JUnit.AuthorServiceTest.getAuthorDTO" />
       </list>
     </recent_temporary>
   </component>
@@ -235,8 +295,17 @@
       <workItem from="1710191998580" duration="1704000" />
       <workItem from="1710277390995" duration="4473000" />
       <workItem from="1710282207352" duration="4000" />
-      <workItem from="1710588199252" duration="12502000" />
+      <workItem from="1710588199252" duration="13875000" />
+      <workItem from="1710759344263" duration="17403000" />
     </task>
+    <task id="LOCAL-00001" summary="before refactor">
+      <created>1710614566369</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1710614566369</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -252,5 +321,17 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="before refactor" />
+    <option name="LAST_COMMIT_MESSAGE" value="before refactor" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/REST_CRUD_JDBC_Tomcat$AuthorServiceTest.ic" NAME="AuthorServiceTest Coverage Results" MODIFIED="1710802857732" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>service.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/REST_CRUD_JDBC_Tomcat$AuthorServiceTest_findById.ic" NAME="AuthorServiceTest.findById Coverage Results" MODIFIED="1710798483796" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>service.*</FILTER>
+    </SUITE>
   </component>
 </project>
