@@ -3,6 +3,7 @@ package entity;
 import lombok.*;
 
 import java.util.List;
+import java.util.Objects;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -25,5 +26,18 @@ public class Author {
                 ", lastname='" + lastname + '\'' +
                 ", books=" + books +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Author author = (Author) o;
+        return Objects.equals(firstname, author.firstname) && Objects.equals(lastname, author.lastname) && Objects.equals(books, author.books);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(firstname, lastname, books);
     }
 }

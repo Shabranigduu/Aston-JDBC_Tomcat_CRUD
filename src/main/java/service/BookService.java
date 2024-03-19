@@ -10,19 +10,16 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class BookService {
+    
+    private BookDAO bookDAO = new BookDAO();
 
     private final BookReadMapper bookReadMapper = new BookReadMapper();
 
     private final BookWriteUpdateMapper bookWriteUpdateMapper = new BookWriteUpdateMapper();
 
-    private static final BookService INSTANCE = new BookService();
 
-    public static BookService getInstance() {
-        return INSTANCE;
-    }
-
-    public BookDTO getBookById(Integer id) {
-        Book book = BookDAO.getInstance().getById(id);
+    public BookDTO findById(Integer id) {
+        Book book = bookDAO.getById(id);
         if (book == null) {
             return null;
         }
@@ -30,14 +27,14 @@ public class BookService {
     }
 
     public List<BookDTO> getAllBooks() {
-        List<Book> listOfBook = BookDAO.getInstance().getAllBooks();
+        List<Book> listOfBook = bookDAO.getAllBooks();
         return listOfBook.stream()
                 .map(bookReadMapper::map)
                 .collect(Collectors.toList());
     }
 
     public BookDTO update(Integer id, BookDTO bookDTO){
-        Book bookToUpdate = BookDAO.getInstance().getById(id);
+        Book bookToUpdate = bookDAO.getById(id);
         if (bookToUpdate == null){
             return null;
         }
@@ -46,17 +43,17 @@ public class BookService {
         bookToUpdate.setAuthor(from.getAuthor());
         bookToUpdate.setPublisher(from.getPublisher());
 
-        return bookReadMapper.map(BookDAO.getInstance().update(bookToUpdate));
+        return bookReadMapper.map(bookDAO.update(bookToUpdate));
     }
 
     public BookDTO add(BookDTO bookDTO){
         Book book = bookWriteUpdateMapper.map(bookDTO);
-        book = BookDAO.getInstance().add(book);
+        book = bookDAO.add(book);
 
         return bookReadMapper.map(book);
     }
 
     public boolean delete(Integer id){
-        return BookDAO.getInstance().delete(id);
+        return bookDAO.delete(id);
     }
 }

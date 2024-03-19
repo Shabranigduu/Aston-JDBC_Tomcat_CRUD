@@ -1,6 +1,5 @@
 package mappers;
 
-import dao.PublisherDAO;
 import dto.PublisherDTO;
 import entity.Publisher;
 

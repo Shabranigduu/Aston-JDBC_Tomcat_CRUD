@@ -15,10 +15,13 @@ import static util.ServletUtil.getBody;
 
 @WebServlet("/book")
 public class BookCRUD extends HttpServlet {
+
+    private BookService bookService = new BookService();
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         resp.setContentType("application/json");
-        BookDTO bookDTO = BookService.getInstance().getBookById(Integer.parseInt(req.getParameter("id")));
+        BookDTO bookDTO = bookService.findById(Integer.parseInt(req.getParameter("id")));
         String json = new ObjectMapper().writeValueAsString(bookDTO);
         PrintWriter pw = resp.getWriter();
         pw.print(json);
@@ -30,7 +33,7 @@ public class BookCRUD extends HttpServlet {
         String json = getBody(req);
         BookDTO bookDTO = new ObjectMapper().readValue(json, BookDTO.class);
         try {
-            bookDTO = BookService.getInstance().add(bookDTO);
+            bookDTO = bookService.add(bookDTO);
             String addJson = new ObjectMapper().writeValueAsString(bookDTO);
             resp.setContentType("application/json");
             PrintWriter pw = resp.getWriter();
@@ -45,7 +48,7 @@ public class BookCRUD extends HttpServlet {
     protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         String json = getBody(req);
         BookDTO bookDTO = new ObjectMapper().readValue(json, BookDTO.class);
-        BookDTO update = BookService.getInstance().update(Integer.parseInt(req.getParameter("id")), bookDTO);
+        BookDTO update = bookService.update(Integer.parseInt(req.getParameter("id")), bookDTO);
         String updateJson = new ObjectMapper().writeValueAsString(update);
         resp.setContentType("application/json");
         PrintWriter pw = resp.getWriter();
@@ -55,7 +58,7 @@ public class BookCRUD extends HttpServlet {
 
     @Override
     protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-        if (!BookService.getInstance().delete(Integer.parseInt(req.getParameter("id")))) {
+        if (!bookService.delete(Integer.parseInt(req.getParameter("id")))) {
             resp.sendError(HttpServletResponse.SC_BAD_REQUEST, "Book not found");
         }
     }

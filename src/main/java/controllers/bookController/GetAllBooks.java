@@ -16,11 +16,13 @@ import java.util.List;
 @WebServlet("/book/all")
 public class GetAllBooks extends HttpServlet {
 
+    private BookService bookService = new BookService();
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setContentType("application/json");
 
-        List<BookDTO> listOfBookDTO = BookService.getInstance().getAllBooks();
+        List<BookDTO> listOfBookDTO = bookService.getAllBooks();
         String json = new ObjectMapper().writeValueAsString(listOfBookDTO);
 
         PrintWriter pw = resp.getWriter();

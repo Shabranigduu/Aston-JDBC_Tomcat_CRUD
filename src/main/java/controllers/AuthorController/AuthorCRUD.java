@@ -16,14 +16,17 @@ import static util.ServletUtil.getBody;
 
 @WebServlet("/author")
 public class AuthorCRUD extends HttpServlet {
+
+    private AuthorService authorService = new AuthorService();
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         Integer id = Integer.parseInt(req.getParameter("id"));
-        Author author = AuthorService.getInstance().findById(id);
+        Author author = authorService.findById(id);
         if (author == null) {
             resp.sendError(HttpServletResponse.SC_BAD_REQUEST, "Author with id=" + id + " not found");
         } else {
-            AuthorDTO authorDTO = AuthorService.getInstance().getAuthorDTO(author);
+            AuthorDTO authorDTO = authorService.getAuthorDTO(author);
             resp.setContentType("application/json");
             String json = new ObjectMapper().writeValueAsString(authorDTO);
             PrintWriter pw = resp.getWriter();
@@ -36,7 +39,7 @@ public class AuthorCRUD extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         String jsonReq = getBody(req);
         AuthorDTO authorDTO = new ObjectMapper().readValue(jsonReq, AuthorDTO.class);
-        AuthorService.getInstance().add(authorDTO);
+        authorService.add(authorDTO);
     }
 
     @Override
@@ -44,7 +47,7 @@ public class AuthorCRUD extends HttpServlet {
         Integer id = Integer.parseInt(req.getParameter("id"));
         String jsonReq = getBody(req);
         AuthorDTO authorDTO = new ObjectMapper().readValue(jsonReq, AuthorDTO.class);
-        if (!AuthorService.getInstance().update(id, authorDTO)) {
+        if (!authorService.update(id, authorDTO)) {
             resp.sendError(HttpServletResponse.SC_BAD_REQUEST, "Author with id=" + id + " not found");
         }
     }
@@ -52,7 +55,7 @@ public class AuthorCRUD extends HttpServlet {
     @Override
     protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         Integer id = Integer.parseInt(req.getParameter("id"));
-        if (!AuthorService.getInstance().delete(id)) {
+        if (!authorService.delete(id)) {
             resp.sendError(HttpServletResponse.SC_BAD_REQUEST, "Author with id=" + id + " not found");
         }
     }

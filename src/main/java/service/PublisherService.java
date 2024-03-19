@@ -8,50 +8,48 @@ import mappers.PublisherWriteUpdateMapper;
 
 public class PublisherService {
 
-    private static final PublisherService INSTANCE = new PublisherService();
-
-    public static PublisherService getInstance() {
-        return INSTANCE;
-    }
-
+    PublisherDAO publisherDAO = new PublisherDAO();
     private final PublisherReadMapper publisherReadMapper = new PublisherReadMapper();
     private final PublisherWriteUpdateMapper publisherWriteUpdateMapper = new PublisherWriteUpdateMapper();
 
-    public Publisher findByName(String name){
-     return findById(PublisherDAO.getInstance().findByName(name));
-    }
-    public Publisher findById(Integer id){
-        return PublisherDAO.getInstance().getById(id);
+    public Publisher findByName(String name) {
+        return publisherDAO.getById(publisherDAO.findByName(name));
     }
 
-    public Publisher add(Publisher publisher){
-        return PublisherDAO.getInstance().add(publisher);
+    public Publisher findById(Integer id) {
+        return publisherDAO.getById(id);
     }
-    public Publisher add(PublisherDTO publisherDTO){
-        return PublisherDAO.getInstance().add(getPublisher(publisherDTO));
+
+    public Publisher add(Publisher publisher) {
+        return publisherDAO.add(publisher);
     }
-    public Publisher getPublisher(PublisherDTO publisherDTO){
+
+    public Publisher add(PublisherDTO publisherDTO) {
+        return publisherDAO.add(getPublisher(publisherDTO));
+    }
+
+    public Publisher getPublisher(PublisherDTO publisherDTO) {
         return publisherWriteUpdateMapper.map(publisherDTO);
     }
 
-    public PublisherDTO getPublisherDTO(Publisher publisher){
+    public PublisherDTO getPublisherDTO(Publisher publisher) {
         return publisherReadMapper.map(publisher);
     }
 
-    public boolean update(Integer id, PublisherDTO publisherDTO){
-        Publisher publisherToUpdate = PublisherDAO.getInstance().getById(id);
-        if(publisherToUpdate==null){
+    public boolean update(Integer id, PublisherDTO publisherDTO) {
+        Publisher publisherToUpdate = publisherDAO.getById(id);
+        if (publisherToUpdate == null) {
             return false;
         }
         Publisher updateFrom = publisherWriteUpdateMapper.map(publisherDTO);
         publisherToUpdate.setName(updateFrom.getName());
         publisherToUpdate.setAddress(updateFrom.getAddress());
-        PublisherDAO.getInstance().update(publisherToUpdate);
+        publisherDAO.update(publisherToUpdate);
         return true;
     }
 
-    public boolean delete(Integer id){
-        return PublisherDAO.getInstance().delete(id);
+    public boolean delete(Integer id) {
+        return publisherDAO.delete(id);
     }
 
 }

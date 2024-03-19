@@ -10,16 +10,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BookDAO {
-
-    private BookDAO() {
-    }
-
-    private static final BookDAO INSTANCE = new BookDAO();
-
-    public static BookDAO getInstance() {
-        return INSTANCE;
-    }
-
     private static final String GET_BY_ID_SQL = """
             SELECT b.id, title, author_id, firstname, lastname, publisher_id, name, address
             from book b
@@ -117,7 +107,7 @@ public class BookDAO {
 
     }
 
-    public Book add(Book book){
+    public Book add(Book book) {
         try (Connection connection = ConnectionManager.open();
              PreparedStatement preparedStatement = connection.prepareStatement(CREATE_SQL, Statement.RETURN_GENERATED_KEYS)) {
             preparedStatement.setString(1, book.getTitle());
@@ -127,7 +117,7 @@ public class BookDAO {
             preparedStatement.executeUpdate();
             ResultSet keys = preparedStatement.getGeneratedKeys();
 
-            if(keys.next()){
+            if (keys.next()) {
                 book.setId(keys.getInt("id"));
             }
 
@@ -137,7 +127,7 @@ public class BookDAO {
         return book;
     }
 
-    public Book update(Book book){
+    public Book update(Book book) {
         try (Connection connection = ConnectionManager.open();
              PreparedStatement preparedStatement = connection.prepareStatement(UPDATE_SQL)) {
             preparedStatement.setString(1, book.getTitle());
@@ -147,19 +137,19 @@ public class BookDAO {
 
             preparedStatement.executeUpdate();
 
-        }catch (SQLException e) {
+        } catch (SQLException e) {
             throw new RuntimeException(e);
         }
         return book;
     }
 
-    public boolean delete(Integer id){
+    public boolean delete(Integer id) {
         try (Connection connection = ConnectionManager.open();
              PreparedStatement preparedStatement = connection.prepareStatement(DELETE_SQL)) {
             preparedStatement.setInt(1, id);
 
-            return preparedStatement.executeUpdate()>0;
-        }catch (SQLException e) {
+            return preparedStatement.executeUpdate() > 0;
+        } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }

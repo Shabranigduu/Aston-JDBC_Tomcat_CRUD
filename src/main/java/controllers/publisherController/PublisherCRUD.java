@@ -3,7 +3,6 @@ package controllers.publisherController;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import dto.PublisherDTO;
 import entity.Publisher;
-import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -17,11 +16,14 @@ import static util.ServletUtil.getBody;
 
 @WebServlet("/publisher")
 public class PublisherCRUD extends HttpServlet {
+
+    private PublisherService publisherService = new PublisherService();
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         resp.setContentType("application/json");
-        Publisher publisher = PublisherService.getInstance().findById(Integer.parseInt(req.getParameter("id")));
-        PublisherDTO publisherDTO = PublisherService.getInstance().getPublisherDTO(publisher);
+        Publisher publisher = publisherService.findById(Integer.parseInt(req.getParameter("id")));
+        PublisherDTO publisherDTO = publisherService.getPublisherDTO(publisher);
         String json = new ObjectMapper().writeValueAsString(publisherDTO);
         PrintWriter pw = resp.getWriter();
         pw.print(json);
@@ -32,9 +34,9 @@ public class PublisherCRUD extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         String json = getBody(req);
         PublisherDTO publisherDTO = new ObjectMapper().readValue(json, PublisherDTO.class);
-        Publisher publisher = PublisherService.getInstance().getPublisher(publisherDTO);
-        publisher = PublisherService.getInstance().add(publisher);
-        publisherDTO = PublisherService.getInstance().getPublisherDTO(publisher);
+        Publisher publisher = publisherService.getPublisher(publisherDTO);
+        publisher = publisherService.add(publisher);
+        publisherDTO = publisherService.getPublisherDTO(publisher);
         String jsonResponse = new ObjectMapper().writeValueAsString(publisherDTO);
         resp.setContentType("application/json");
         PrintWriter pw = resp.getWriter();
@@ -47,7 +49,7 @@ public class PublisherCRUD extends HttpServlet {
         Integer id = Integer.parseInt(req.getParameter("id"));
         String json = getBody(req);
         PublisherDTO publisherDTO = new ObjectMapper().readValue(json, PublisherDTO.class);
-        if (!PublisherService.getInstance().update(id, publisherDTO)) {
+        if (!publisherService.update(id, publisherDTO)) {
             resp.sendError(HttpServletResponse.SC_BAD_REQUEST, "Publisher with id=" + id + " not found");
         }
     }
@@ -55,7 +57,7 @@ public class PublisherCRUD extends HttpServlet {
     @Override
     protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         Integer id = Integer.parseInt(req.getParameter("id"));
-        if (!PublisherService.getInstance().delete(id)) {
+        if (!publisherService.delete(id)) {
             resp.sendError(HttpServletResponse.SC_BAD_REQUEST, "Publisher with id=" + id + " not found");
         }
     }

@@ -1,8 +1,5 @@
 package dto;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import entity.Author;
-import entity.Publisher;
 import lombok.*;
 
 import java.util.Objects;
@@ -12,7 +9,7 @@ import java.util.Objects;
 @Builder
 @Getter
 @Setter
-public class BookDTO{
+public class BookDTO {
 
     private String title;
     private String publisher;

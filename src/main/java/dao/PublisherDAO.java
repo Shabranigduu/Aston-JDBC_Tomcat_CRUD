@@ -1,22 +1,11 @@
 package dao;
 
-import dto.PublisherDTO;
-import entity.Book;
 import entity.Publisher;
 import util.ConnectionManager;
 
 import java.sql.*;
 
 public class PublisherDAO {
-
-    private PublisherDAO() {
-    }
-
-    private static final PublisherDAO INSTANCE = new PublisherDAO();
-
-    public static PublisherDAO getInstance() {
-        return INSTANCE;
-    }
 
     private static final String FIND_BY_NAME_SQL = """
             SELECT id
@@ -106,7 +95,7 @@ public class PublisherDAO {
         return publisher;
     }
 
-    public void update(Publisher publisher){
+    public void update(Publisher publisher) {
         try (Connection connection = ConnectionManager.open();
              PreparedStatement preparedStatement = connection.prepareStatement(UPDATE_SQL)) {
             preparedStatement.setString(1, publisher.getName());
@@ -115,19 +104,19 @@ public class PublisherDAO {
 
             preparedStatement.executeUpdate();
 
-        }catch (SQLException e) {
+        } catch (SQLException e) {
             throw new RuntimeException(e);
         }
 
     }
 
-    public boolean delete(Integer id){
+    public boolean delete(Integer id) {
         try (Connection connection = ConnectionManager.open();
              PreparedStatement preparedStatement = connection.prepareStatement(DELETE_SQL)) {
             preparedStatement.setInt(1, id);
 
-            return preparedStatement.executeUpdate()>0;
-        }catch (SQLException e) {
+            return preparedStatement.executeUpdate() > 0;
+        } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }

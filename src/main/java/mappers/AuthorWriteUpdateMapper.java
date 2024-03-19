@@ -2,7 +2,6 @@ package mappers;
 
 import dto.AuthorDTO;
 import entity.Author;
-import entity.Publisher;
 
 import java.util.StringTokenizer;
 
@@ -12,10 +11,10 @@ public class AuthorWriteUpdateMapper implements Mapper<AuthorDTO, Author> {
         StringTokenizer tokenizer = new StringTokenizer(from.getName(), " ");
         String firstname = "";
         String lastname = "";
-        if(tokenizer.hasMoreTokens()){
+        if (tokenizer.hasMoreTokens()) {
             firstname = tokenizer.nextToken();
         }
-        if(tokenizer.hasMoreTokens()){
+        if (tokenizer.hasMoreTokens()) {
             lastname = tokenizer.nextToken();
         }
         return Author.builder()

@@ -1,22 +1,11 @@
 package dao;
 
 import entity.Author;
-import entity.Publisher;
 import util.ConnectionManager;
-
 import java.sql.*;
 import java.util.StringTokenizer;
 
 public class AuthorDAO {
-
-    private AuthorDAO() {
-    }
-
-    private static final AuthorDAO INSTANCE = new AuthorDAO();
-
-    public static AuthorDAO getInstance() {
-        return INSTANCE;
-    }
 
     private static final String GET_BY_ID_SQL = """
             SELECT b.id, title, author_id, firstname, lastname, publisher_id, name, address
@@ -40,8 +29,8 @@ public class AuthorDAO {
             UPDATE author
             SET firstname = ?,
                 lastname = ?
-            WHERE id = ?                
-             """;
+            WHERE id = ?;
+            """;
 
     private static final String FIND_BY_NAME_SQL = """
             select *
