@@ -9,31 +9,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="93e52c57-f02c-4ead-9cf4-c78014e013c2" name="Changes" comment="before refactor DAO and Service">
-      <change afterPath="$PROJECT_DIR$/src/test/java/service/BookServiceTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/service/PublisherServiceTest.java" afterDir="false" />
+    <list default="true" id="93e52c57-f02c-4ead-9cf4-c78014e013c2" name="Changes" comment="final version with tests">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/AuthorController/AuthorCRUD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/AuthorController/AuthorCRUD.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/bookController/BookCRUD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/bookController/BookCRUD.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controllers/bookController/GetAllBooks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/bookController/GetAllBooks.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/publisherController/PublisherCRUD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/publisherController/PublisherCRUD.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dao/AuthorDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/AuthorDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/BookDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/BookDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/PublisherDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/PublisherDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dto/BookDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dto/BookDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dto/PublisherDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dto/PublisherDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entity/Author.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/Author.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entity/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/Book.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entity/Publisher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/Publisher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mappers/AuthorWriteUpdateMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mappers/AuthorWriteUpdateMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mappers/BookWriteUpdateMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mappers/BookWriteUpdateMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mappers/Mapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mappers/Mapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mappers/PublisherReadMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mappers/PublisherReadMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/AuthorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/AuthorService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/BookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/BookService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/service/PublisherService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/PublisherService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/util/ServletUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/ServletUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/service/AuthorServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/service/AuthorServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,7 +82,7 @@
       <recent name="service" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.BookServiceTest">
+  <component name="RunManager" selected="Tomcat Server.Tomcat 10.1.13">
     <configuration name="AuthorServiceTest.findByIdTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="REST_CRUD_JDBC_Tomcat" />
       <extension name="coverage">
@@ -320,7 +299,8 @@
       <workItem from="1710282207352" duration="4000" />
       <workItem from="1710588199252" duration="13875000" />
       <workItem from="1710759344263" duration="19206000" />
-      <workItem from="1710833394470" duration="6973000" />
+      <workItem from="1710833394470" duration="7789000" />
+      <workItem from="1710925187796" duration="3553000" />
     </task>
     <task id="LOCAL-00001" summary="before refactor">
       <created>1710614566369</created>
@@ -336,7 +316,14 @@
       <option name="project" value="LOCAL" />
       <updated>1710804292478</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="final version with tests">
+      <created>1710846718160</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1710846718160</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -356,7 +343,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="before refactor" />
     <MESSAGE value="before refactor DAO and Service" />
-    <option name="LAST_COMMIT_MESSAGE" value="before refactor DAO and Service" />
+    <MESSAGE value="final version with tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="final version with tests" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/REST_CRUD_JDBC_Tomcat$AuthorServiceTest.ic" NAME="AuthorServiceTest Coverage Results" MODIFIED="1710836920376" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

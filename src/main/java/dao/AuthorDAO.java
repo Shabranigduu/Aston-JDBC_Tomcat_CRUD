@@ -8,11 +8,9 @@ import java.util.StringTokenizer;
 public class AuthorDAO {
 
     private static final String GET_BY_ID_SQL = """
-            SELECT b.id, title, author_id, firstname, lastname, publisher_id, name, address
-            from book b
-            join author a on a.id = b.author_id
-            join publisher p on p.id = b.publisher_id
-            where b.id = ?
+            SELECT id, firstname, lastname
+            from author            
+            where id = ?
             """;
     private static final String CREATE_SQL = """
             INSERT INTO author(firstname, lastname)

@@ -29,6 +29,6 @@ public class GetAllBooks extends HttpServlet {
         pw.print(json);
         pw.flush();
 
-        super.doGet(req, resp);
+
     }
 }
